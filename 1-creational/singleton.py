@@ -33,6 +33,9 @@ class SingletonControlTower:
         else:
             print("Using previously created object for repeated instance req.")
         return cls._instance
+    
+    def flightControl(self, flightID):
+        print("Controling Flight: ", flightID)
         
 
 st1 = SingletonControlTower()
@@ -43,3 +46,6 @@ print("st2 id: ", id(st2))
 print(st1 is st2)  # True --> as both objs have same ids
 
 
+st1.flightControl("IN121")
+st1.flightControl("IN178")
+st2.flightControl("US900")
